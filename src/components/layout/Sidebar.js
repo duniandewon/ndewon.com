@@ -3,24 +3,16 @@ import styled from 'styled-components';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
-import ProfilePic from '../../assets/profile.jpg';
+import { Col } from 'react-bootstrap';
+import Header from '../Header';
 
 const Sidebar = () => (
 	<Fragment>
-		{/* {<SideNav>
-				<Navbar variant='dark' expand='lg'>
-					<Navbar.Brand href='/'>
-						<img src={ProfilePic} className='profile-pic mx-auto mb-2' roundedCircle />
-					</Navbar.Brand>
-					<Navbar.Collapse id='main-sidebar'>
-						<Nav>	
-							<Nav.Link>
-								<Link to='/'>About</Link>
-							</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</Navbar>
-			</SideNav>} */}
+		<Col lg={2} className='d-none d-lg-block'>
+			<SideNav>
+				<Header />
+			</SideNav>
+		</Col>
 	</Fragment>
 );
 
@@ -31,22 +23,10 @@ const SideNav = styled.aside`
 	left: 0;
 	display: flex;
 	flex-direction: column;
-	width: 17rem;
+	width: 100%;
 	height: 100vh;
 	background-color: #000;
-
-	.navbar-brand {
-		display: flex;
-		margin: auto auto 0;
-		padding: .5rem;
-
-		.profile-pic {
-			max-width: 10rem;
-			max-height: 10rem;
-			border: .5rem solid rgba(255, 255, 255, .2);
-			border-radius: 50%;
-		}
-	}
+	padding: 4rem 1.3rem;
 `;
 
 export default Sidebar;

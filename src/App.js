@@ -5,20 +5,23 @@ import About from './components/pages/About';
 import Blog from './components/pages/Blog';
 import Contact from './components/pages/Contact';
 import NotFound from './components/pages/NotFound';
+import Row from 'react-bootstrap/Row';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
 	return (
 		<Fragment>
-			<SideBar />
-			<MainContent>
-				<Switch>
-					<Route exact path='/' component={About} />
-					<Route path='/blog' component={Blog} />
-					<Route path='/contact' component={Contact} />
-					<Route component={NotFound} />
-				</Switch>
-			</MainContent>
+			<Row>
+				<SideBar />
+				<MainContent>
+					<Switch>
+						<Route exact path='/' component={About} />
+						<Route path='/blog' component={Blog} />
+						<Route path='/contact' component={Contact} />
+						<Route component={NotFound} />
+					</Switch>
+				</MainContent>
+			</Row>
 		</Fragment>
 	);
 }
