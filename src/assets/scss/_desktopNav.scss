@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 1.8rem 0;
+}
+
+.nav-link {
+  text-transform: uppercase;
+
+  &:hover {
+    color: #787878;
+    text-decoration: underline;
+  }
+}

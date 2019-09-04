@@ -1,29 +1,31 @@
 import React, { Fragment } from 'react';
-import SideBar from './components/layout/Sidebar';
-import MainContent from './components/layout/MainContent';
-import About from './components/pages/About';
-import Blog from './components/pages/Blog';
-import Contact from './components/pages/Contact';
-import NotFound from './components/pages/NotFound';
-import Row from 'react-bootstrap/Row';
-import { Switch, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Sidebar from './layout/Sidebar';
+import MobileNav from './components/MobileNav';
+import MobileFooter from './components/MobileFooter';
+import MainContent from './layout/MainContent';
+import About from './pages/About';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+import MyWorks from './pages/MyWorks';
+import NotFound from './pages/NotFound';
 
-function App() {
-	return (
-		<Fragment>
-			<Row>
-				<SideBar />
-				<MainContent>
-					<Switch>
-						<Route exact path='/' component={About} />
-						<Route path='/blog' component={Blog} />
-						<Route path='/contact' component={Contact} />
-						<Route component={NotFound} />
-					</Switch>
-				</MainContent>
-			</Row>
-		</Fragment>
-	);
-}
+const App = () => (
+  <Fragment>
+    <Sidebar />
+    <MobileNav />
+    <MainContent>
+      {/* <Header /> */}
+      <Switch>
+        <Route exact path='/' component={About} />
+        <Route path='/blog' component={Blog} />
+        <Route path='/myworks' component={MyWorks} />
+        <Route path='/contact' component={Contact} />
+        <Route component={NotFound} />
+      </Switch>
+    </MainContent>
+    <MobileFooter />
+  </Fragment>
+);
 
 export default App;
